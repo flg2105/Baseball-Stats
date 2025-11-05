@@ -1,18 +1,326 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baseball Stats</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Baseball Stats</title>
 </head>
 <body>
-    <label for="playerID">Player</label>
-    <select name="playerID" id="playerID">
-        <option value="apple">A</option>
-        <option value="banana">B</option>
-        <option value="orange">C</option>
-        <option value="grape">D</option>
-    </select>
-    
+   <label for="playerID">Player</label>
+   <select name="playerID" id="playerID">
+       <option value="apple">A</option>
+       <option value="banana">B</option>
+       <option value="orange">C</option>
+       <option value="grape">D</option>
+   </select>
+
+
+   <form name="form1" id="form1" action="/action_page.php">
+       Team <select name="team" id="team">
+           <option value="">Select Team</option>
+           <option value ="adb">Arizona Diamondbacks</option>
+       <option value ="ath">Athletics</option>
+       <option value ="atl">Atlanta Braves</option>
+       <option value ="bal">Baltimore Orioles</option>
+       <option value ="bos">Boston Red Sox</option>
+       <option value ="chc">Chicago Cubs</option>
+       <option value ="cws">Chicago White Sox</option>
+       <option value ="cin">Cincinnati Reds</option>
+       <option value ="cle">Cleveland Guardians</option>
+       <option value ="col">Colorado Rockies</option>
+       <option value ="det">Detroit Tigers</option>
+       <option value ="hou">Houston Astros</option>
+       <option value ="kan">Kansas City Royals</option>
+       <option value ="laa">Los Angeles Angels</option>
+       <option value ="lad">Los Angeles Dodgers</option>
+       <option value ="mia">Miami Marlins</option>
+       <option value ="mil">Milawukee Brewers</option>
+       <option value ="min">Minessota Twins</option>
+       <option value ="nym">New York Mets</option>
+       <option value ="nyy">New York Yankees</option>
+       <option value ="phi">Philadelphia Phillies</option>
+       <option value ="pit">Pittsburgh Pirates</option>
+       <option value ="sdp">San Diego Padres</option>
+       <option value ="sfg">San Francisco Giants</option>
+       <option value ="sea">Seattle Mariners</option>
+       <option value ="stl">St. Louis Cardinals</option>
+       <option value ="tam">Tampa Bay Rays</option>
+       <option value ="tex">Texas Rangers</option>
+       <option value ="tor">Toronto Blue Jays</option>
+       <option value ="was">Washington Nationals</option>
+       </select>
+   </form>
+
+
+   <script>
+       const teamPlayers ={
+           adb : [
+               "Ketel Marte",
+               "Corbin Carroll",
+               "Gabriel Moreno",
+               "Pavin Smith",
+               "Blaze Alexander",
+               "Geraldo Perdomo",
+               "Jake McCarthy",
+               "Alek Thomas",
+               "Jorge Barrosa",
+               "Ryne Nelson",
+               "Eduardo Rodriguez",
+               "Brandon Pfaadt",
+               "Zac Gallen",
+               "Cristian Mena"
+           ],
+           ath : [
+               "Shea Langeliers",
+               "Nick Kurtz",
+               "Darrel Hernaiz",
+               "Max Muncy",
+               "Jacob Wilson",
+               "Tyler Soderstrom",
+               "Denzel Clarke",
+               "Lawrence Butler",
+               "Brent Rooker",
+               "Jeffrey Springs",
+               "Luis Severino",
+               "Jacob Lopez",
+               "Luis Morales",
+               "Jack Perkins"
+           ],
+           atl : [
+               "Sean Murphy",
+               "Matt Olson",
+               "Ozzie Albies",
+               "Austin Riley",
+               "Nick Allen",
+               "Jurickson Profar",
+               "Michael Harris II",
+               "Ronald Acuna Jr.",
+               "Drake Baldwin",
+               "Chris Sale",
+               "Spencer Strider",
+               "Spencer Schwellenbach",
+               "Grant Holmes",
+               "Hurston Waldrep"
+           ],
+           bal : [
+               "Adley Rutschman",
+               "Coby Mayo",
+               "Jackson Holliday",
+               "Jordan Westburg",
+               "Gunnar Henderson",
+               "Dylan Beavers",
+               "Colton Cowser",
+               "Tyler O'Neill",
+               "Samuel Basallo",
+               "Trevor Rogers",
+               "Kyle Bradish",
+               "Grayson Rodriguez",
+               "Dean Kremer",
+               "Tyler Wells"
+           ],
+           bos : [
+               "Carlos Narvaez",
+               "Triston Casas",
+               "Romy Gonzalez",
+               "Marcelo Mayer",
+               "Trevor Story",
+               "Jarren Duran",
+               "Ceddanne Rafaela",
+               "Wilyer Abreu",
+               "Roman Anthony",
+               "Garret Crochet",
+               "Brayan Bello",
+               "Lucas Giolito",
+               "Connelly Early",
+               "Hunter Dobbins"
+           ],
+           chc : [
+               "Carson Kelly",
+               "Michael Busch",
+               "Nico Hoerner",
+               "Matt Shaw",
+               "Dansby Swanson",
+               "Ian Happ",
+               "Pete Crow-Armstrong",
+               "Seiya Suzuki",
+               "Moises Ballesteros",
+               "Cade Horton",
+               "Justin Steele",
+               "Matthew Boyd",
+               "Jameson Taillon",
+               "Colin Rea"
+           ],
+           cws : [
+               "Kyle Teal",
+               "Lenyn Sosa",
+               "Chase Meidroth",
+               "Miguel Vargas",
+               "Colson Montgomery",
+               "Andrew Benintendi",
+               "Luis Robert Jr",
+               "Mike Tauchman",
+               "Edgar Quero",
+               "Shane Smith",
+               "Davis Martin",
+               "Yoendrys Gomez",
+               "Sean Burke",
+               "Jonathan Cannon"
+           ],
+           cin :  [
+               "Tyler Stephenson",
+               "Spencer Steer",
+               "Matt McLain",
+               "Ke'Bryan Hayes",
+               "Elly De La Cruz",
+               "Austin Hays",
+               "TJ Friedl",
+               "Noelvi Marte",
+               "Gavin Lux",
+               "Hunter Greene",
+               "Andrew Abbott",
+               "Nick Lodolo",
+               "Brady Singer",
+               "Chase Burns"
+           ],
+           cle : [
+               "Bo Naylor",
+               "Kyle Manzardo",
+               "Brayan Rocchio",
+               "Jose Ramirez",
+               "Gabriel Arias",
+               "Steven Kwan",
+               "Chase DeLauter",
+               "George Valera",
+               "Kyle Manzardo",
+               "Gavin Williams",
+               "Tanner Bibee",
+               "Logan Allen",
+               "Slade Cecconi",
+               "Joey Cantillo"
+           ],
+           col : [
+            "Hunter Goodman",
+            "Warming Bernanbel",
+            "Tyler Freeman",
+            "Kyle Karros",
+            "Ezequiel Tovar",
+            "Jordan Beck",
+            "Brenton Doyle",
+            "Mickey Moniak",
+            "Kris Bryant",
+            "Kyle Freeland",
+            "Chase Dollander",
+            "Tanner Gordon",
+            "McCade Brown",
+            "Bradley Blalock"
+           ],
+           det : [
+            "Dillon Dingler",
+            "Spencer Torkelson",
+            "Zach McKinstry",
+            "Colt Keith",
+            "Javier Baez",
+            "Riley Greene",
+            "Parker Meadows",
+            "Wenceel Perez",
+            "Kerry Carpenter",
+            "Tarik Skubal",
+            "Jack Flaherty",
+            "Casey Mize",
+            "Reese Olson",
+            "Troy Melton:",
+           ],
+           hou : [
+            "Yainer Diaz",
+            "Christian Walker",
+            "Jose Altuve",
+            "Carlos Correa",
+            "Jeremy Pena",
+            "Yordan Alvarez",
+            "Jake Meyers",
+            "Jesus Sanchez",
+            "Isaac Paredes",
+            "Hunter Brown",
+            "Spencer Arrighetti",
+            "Cristian Javier",
+            "Framber Valdez",
+            "Aj Blubaugh"
+           ],
+           kan : [
+            "Salvador Perez",
+            "Vinnie Pasquantino",
+            "Jonathan India",
+            "Maikel Garcia",
+            "Bobby Witt Jr.",
+            "Michael Massey",
+            "Kyle Isbel",
+            "Jac Caglianone",
+            "Carter Jensen",
+            "Cole Ragans",
+            "Michael Wacha",
+            "Seth Lugo",
+            "Kris Bubic",
+            "Noah Cameron"
+           ],
+           laa : [
+            "Logan O'Hoppe",
+            "Nolan Schanuel",
+            "Christian Moore",
+            "Anthony Rendon",
+            "Zach Neto",
+            "Taylor Ward",
+            "Jo Adell",
+            "Mike Trout",
+            "Jorge Soler",
+            "Yusei Kikuchi",
+            "Jose Soriano",
+            "Mitch Farris",
+            "Caden Dana",
+            "Kyle Hendricks"
+           ],
+           lad : [
+            "Will Smith",
+            "Freddie Freeman",
+            "Hyeseong Kim",
+            "Max Muncy",
+            "Mookie Betts",
+            "Andy Pages",
+            "Tommy Edman",
+            "Teoscar Hernandez",
+            "Shohei Ohtani",
+            "Yoshinobu Yamamoto",
+            "Blake Snell",
+            "Tyler Glasnow",
+            "Roki Sasaki",
+            "Clayton Kershaw"
+           ],
+           mia : [
+            "Agustin Ramirez",
+            "Liam Hicks",
+            "Xavier Edwards",
+            "Connor Norby",
+            "Otto Lopez",
+            "Kyle Stowers",
+            "Jakob Marsee",
+            "Dane Myers",
+            "Heriberto Hernandez",
+            "Eury Perez",
+            "Sandy Alcantara",
+            "Edward Cabrera",
+            "Ryan Weathers",
+            "Max Meyer"
+           ],
+
+
+
+
+
+
+
+
+       }
+   </script>
+  
 </body>
 </html>
+
